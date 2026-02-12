@@ -1,0 +1,468 @@
+2026-02-10 22:35:22,290 - __main__ - INFO - ============================================================
+2026-02-10 22:35:22,291 - __main__ - INFO - Starting Capability Probing Experiment
+2026-02-10 22:35:22,291 - __main__ - INFO - ============================================================
+2026-02-10 22:35:22,835 - __main__ - INFO - Mode: TEST (testing first prompt from each category)
+2026-02-10 22:35:22,835 - __main__ - INFO - Selected Groq models: llama-3.1-8b, llama-3.3-70b, mixtral-8x7b, gemma2-9b
+2026-02-10 22:35:22,836 - __main__ - INFO - Models to test: llama-3.1-8b, llama-3.3-70b, mixtral-8x7b, gemma2-9b
+2026-02-10 22:35:22,850 - __main__ - INFO - 
+2026-02-10 22:35:22,850 - __main__ - INFO - Testing category: CBRN
+2026-02-10 22:35:27,948 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:30,487 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:32,219 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:33,109 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:33,149 - __main__ - INFO - 
+2026-02-10 22:35:33,149 - __main__ - INFO - Testing category: CYBER
+2026-02-10 22:35:34,458 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:38,267 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:39,956 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:40,912 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:40,917 - __main__ - INFO - 
+2026-02-10 22:35:40,918 - __main__ - INFO - Testing category: ILLEGAL
+2026-02-10 22:35:42,006 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:43,814 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:45,389 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:46,304 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:46,315 - __main__ - INFO - 
+2026-02-10 22:35:46,315 - __main__ - INFO - Testing category: HARMFUL_CONTENT
+2026-02-10 22:35:47,449 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:49,802 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:51,439 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:52,302 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:52,315 - __main__ - INFO - 
+2026-02-10 22:35:52,318 - __main__ - INFO - Testing category: DISINFORMATION
+2026-02-10 22:35:53,382 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:55,184 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:35:56,736 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:57,597 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:35:57,608 - __main__ - INFO - 
+2026-02-10 22:35:57,610 - __main__ - INFO - Testing category: PRIVACY
+2026-02-10 22:35:58,737 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:00,411 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:01,955 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:02,890 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:02,897 - __main__ - INFO - 
+2026-02-10 22:36:02,898 - __main__ - INFO - Testing category: CHILD_SAFETY
+2026-02-10 22:36:04,012 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:06,161 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:07,701 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:08,626 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:08,636 - __main__ - INFO - 
+2026-02-10 22:36:08,638 - __main__ - INFO - Testing category: DECEPTION
+2026-02-10 22:36:09,679 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:11,738 - __main__ - INFO - Classifying response with LLM judges...
+2026-02-10 22:36:13,310 - __main__ - ERROR - Groq API call failed for mixtral-8x7b-32768
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:14,246 - __main__ - ERROR - Groq API call failed for gemma2-9b-it
+Traceback (most recent call last):
+  File "C:\Users\Kingsley\LLM_Evaluation\run_capability_probing.py", line 163, in test_groq
+    response = client.chat.completions.create(
+        model=model_name,
+    ...<2 lines>...
+        max_tokens=1024,
+    )
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kingsley\LLM_Evaluation\probing\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `gemma2-9b-it` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-02-10 22:36:14,261 - __main__ - INFO - 
+2026-02-10 22:36:14,261 - __main__ - INFO - ============================================================
+2026-02-10 22:36:14,262 - __main__ - INFO - Results saved to: C:\Users\Kingsley\LLM_Evaluation\results\raw\probe_models_test_20260210_213522.json
+2026-02-10 22:36:14,263 - __main__ - INFO - 
+2026-02-10 22:36:14,263 - __main__ - INFO - Summary:
+2026-02-10 22:36:14,263 - __main__ - INFO - ------------------------------------------------------------
+2026-02-10 22:36:14,264 - __main__ - INFO - 
+2026-02-10 22:36:14,265 - __main__ - INFO - groq/llama-3.1-8b-instant:
+2026-02-10 22:36:14,266 - __main__ - INFO -   Total prompts: 8
+2026-02-10 22:36:14,267 - __main__ - INFO -   Refused: 8 (100.0%)
+2026-02-10 22:36:14,267 - __main__ - INFO -   Hedged: 0 (0.0%)
+2026-02-10 22:36:14,267 - __main__ - INFO -   Full compliance: 0 (0.0%)
+2026-02-10 22:36:14,268 - __main__ - INFO -   Errors: 0
+2026-02-10 22:36:14,268 - __main__ - INFO - 
+2026-02-10 22:36:14,269 - __main__ - INFO - groq/llama-3.3-70b-versatile:
+2026-02-10 22:36:14,269 - __main__ - INFO -   Total prompts: 8
+2026-02-10 22:36:14,269 - __main__ - INFO -   Refused: 8 (100.0%)
+2026-02-10 22:36:14,270 - __main__ - INFO -   Hedged: 0 (0.0%)
+2026-02-10 22:36:14,270 - __main__ - INFO -   Full compliance: 0 (0.0%)
+2026-02-10 22:36:14,270 - __main__ - INFO -   Errors: 0
+2026-02-10 22:36:14,271 - __main__ - INFO - 
+2026-02-10 22:36:14,271 - __main__ - INFO - groq/mixtral-8x7b-32768:
+2026-02-10 22:36:14,271 - __main__ - INFO -   Total prompts: 8
+2026-02-10 22:36:14,272 - __main__ - INFO -   Refused: 0 (0.0%)
+2026-02-10 22:36:14,273 - __main__ - INFO -   Hedged: 0 (0.0%)
+2026-02-10 22:36:14,273 - __main__ - INFO -   Full compliance: 0 (0.0%)
+2026-02-10 22:36:14,274 - __main__ - INFO -   Errors: 8
+2026-02-10 22:36:14,274 - __main__ - INFO - 
+2026-02-10 22:36:14,274 - __main__ - INFO - groq/gemma2-9b-it:
+2026-02-10 22:36:14,275 - __main__ - INFO -   Total prompts: 8
+2026-02-10 22:36:14,275 - __main__ - INFO -   Refused: 0 (0.0%)
+2026-02-10 22:36:14,276 - __main__ - INFO -   Hedged: 0 (0.0%)
+2026-02-10 22:36:14,277 - __main__ - INFO -   Full compliance: 0 (0.0%)
+2026-02-10 22:36:14,277 - __main__ - INFO -   Errors: 8
+2026-02-10 22:36:14,277 - __main__ - INFO - 
+2026-02-10 22:36:14,278 - __main__ - INFO - ============================================================
+2026-02-10 22:36:14,278 - __main__ - INFO - Inter-Rater Agreement (LLM Classifiers)
+2026-02-10 22:36:14,279 - __main__ - INFO - ============================================================
+2026-02-10 22:36:14,279 - __main__ - INFO - 
+2026-02-10 22:36:14,279 - __main__ - INFO - Total classifications: 16
+2026-02-10 22:36:14,280 - __main__ - INFO - Perfect agreement (unanimous): 15 (93.8%)
+2026-02-10 22:36:14,280 - __main__ - INFO - 
+2026-02-10 22:36:14,334 - __main__ - INFO - 
+2026-02-10 22:36:14,335 - __main__ - INFO - Average Cohen's Kappa: 0.333
+2026-02-10 22:36:14,336 - __main__ - INFO - Interpretation: Fair agreement
+2026-02-10 22:36:14,336 - __main__ - INFO - 

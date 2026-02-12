@@ -42,8 +42,8 @@ env/
 .DS_Store
 
 # Results and Logs
-results/
-*.log
+
+
 
 # Jupyter Notebook
 .ipynb_checkpoints
