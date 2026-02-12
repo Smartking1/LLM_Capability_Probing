@@ -1,0 +1,15 @@
+# LLM Safety Evaluation System Dependencies
+
+# Core dependencies
+groq>=0.4.0                # Groq API SDK
+python-dotenv>=1.0.0       # Load environment variables from .env file
+pyyaml>=6.0                # YAML configuration parsing
+tqdm>=4.65.0               # Progress bars
+
+# Analysis and statistics
+pandas>=2.0.0              # Data analysis
+matplotlib>=3.7.0          # Plotting
+seaborn>=0.12.0            # Statistical visualizations
+scikit-learn>=1.3.0        # Cohen's kappa and other metrics
+numpy>=1.24.0              # Numerical operations
+python-dotenv>=1.0.0       # Load environment variables from .env file
